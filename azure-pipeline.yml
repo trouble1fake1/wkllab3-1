@@ -1,0 +1,16 @@
+trigger:
+- main
+
+pool:
+  name: "WKL-glrnhaftvm2637389"  # Specifies the self-hosted agent pool
+
+steps:
+- script: |
+    # Install Python 3.11 if not installed
+    sudo apt install python3
+  displayName: 'Install Python 3.11 if not present'
+
+
+- script: |
+    python3 rev.py  # Run python File
+  displayName: 'Run rev.py'
